@@ -57,7 +57,6 @@ public class RetirementController implements Initializable {
 		txtMonthlySSI.clear();
 		amountToSaveLabel.setText("...");
 		totalAmountSavedLabel.setText("...");
-		// TODO: Clear all the text inputs
 	}
 
 	@FXML
@@ -71,7 +70,6 @@ public class RetirementController implements Initializable {
 		totalAmountSavedLabel.setText("$" + Double.toString(r.TotalAmountSaved()));
 		System.out.println(r.AmountToSave());
 		System.out.println(r.TotalAmountSaved());
-		// TODO: Call AmountToSave and TotalAmountSaved and populate
 		}
 	}
 

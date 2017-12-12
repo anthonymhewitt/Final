@@ -11,7 +11,6 @@ public class Retirement {
 	private double dRequiredIncome;
 	private double dMonthlySSI;
 	
-	//TODO: Build the contructor, getters and setters for the attributes above.
 	public Retirement(int YearsToWork, double AnnualReturnWorking, int YearsRetired, double AnnualReturnRetired, double RequiredIncome, double MonthlySSI) {
 		iYearsToWork = YearsToWork;
 		dAnnualReturnWorking = AnnualReturnWorking;
