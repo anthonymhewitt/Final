@@ -67,8 +67,8 @@ public class RetirementController implements Initializable {
 				Double.parseDouble(txtAnnualReturnWorking.getText()), Integer.parseInt(txtYearsRetired.getText()),
 				Double.parseDouble(txtAnnualReturnRetired.getText()), Double.parseDouble(txtRequiredIncome.getText()),
 				Double.parseDouble(txtMonthlySSI.getText()));
-		amountToSaveLabel.setText("$" + Double.toString(Math.round(r.AmountToSave() * 100.0) / 100.0));
-		totalAmountSavedLabel.setText("$" + Double.toString(-1 * Math.round(r.TotalAmountSaved() * 100.0) / 100.0));
+		amountToSaveLabel.setText("$" + Double.toString(r.AmountToSave()));
+		totalAmountSavedLabel.setText("$" + Double.toString(r.TotalAmountSaved()));
 		System.out.println(r.AmountToSave());
 		System.out.println(r.TotalAmountSaved());
 		// TODO: Call AmountToSave and TotalAmountSaved and populate
@@ -119,7 +119,7 @@ public class RetirementController implements Initializable {
 			errorMessage += "invalid required income field\n";
 		} else {
 			try {
-				Double.parseDouble(txtAnnualReturnRetired.getText());
+				Double.parseDouble(txtRequiredIncome.getText());
 			} catch (NumberFormatException e) {
 				errorMessage += "invalid required income field (must be a number)\n";
 			}
@@ -128,7 +128,7 @@ public class RetirementController implements Initializable {
 			errorMessage += "invalid monthly SSI field\n";
 		} else {
 			try {
-				Double.parseDouble(txtAnnualReturnRetired.getText());
+				Double.parseDouble(txtMonthlySSI.getText());
 			} catch (NumberFormatException e) {
 				errorMessage += "invalid Monthly SSI field (must be a number)\n";
 			}

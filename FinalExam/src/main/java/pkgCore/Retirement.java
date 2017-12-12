@@ -27,13 +27,13 @@ public class Retirement {
 
 		double dAmountToSave = FinanceLib.pmt(dAnnualReturnWorking/12, iYearsToWork*12, 0, pv, false);
 		
-		return dAmountToSave;
+		return (Math.round(dAmountToSave * 100.0) / 100.0);
 	}
 	
 	public double TotalAmountSaved()
 	{
 		double dTotalAmountSaved = FinanceLib.pv(dAnnualReturnRetired/12, iYearsRetired*12, dRequiredIncome - dMonthlySSI, 0, false);
 
-		return dTotalAmountSaved;
+		return (-1*Math.round(dTotalAmountSaved*100.0) / 100.0);
 	}
 }

@@ -3,6 +3,9 @@ package pkgEmpty;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import pkgCore.Retirement;
+
 import org.apache.poi.ss.formula.functions.*;
 public class TestFinance {
 
@@ -26,34 +29,10 @@ public class TestFinance {
 	
 	
 	@Test
-	public void TestPV()
-	{
-		double r = 0.025 / 12;
-		double n = 20 * 12;
-		double y = 10000-2642;
-		double f = 0;
-		boolean t = false;
-		double pv = FinanceLib.pv(r, n, y, f, t);
-		
-		//System.out.println(pv);
-		
-	}
-	
-	
-	@Test
-	public void TestPMT() {
-		double r = 0.042 / 12;
-		double n = 60;
-		double p = 30000;
-		double f = 0;
-		boolean t = false;
-		
-		double d = FinanceLib.pmt(r, n, p, f, t);
-		
-		//System.out.println(d);
-		
-		
-		
+	public void RetirementTest() {
+		Retirement r = new Retirement(40, .07, 20, .02, 10000.00, 2642.00);
+		assertEquals(554.13,r.AmountToSave(),.0001);
+		assertEquals(1454485.55,r.TotalAmountSaved(),.0001);
 	}
 
 }
